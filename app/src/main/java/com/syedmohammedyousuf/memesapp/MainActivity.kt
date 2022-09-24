@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         //livedata observer
         memeViewModel.memeDataList.observe(this, Observer{
-            initAdapter(it)
+            initAdapter(it.data.memes)
         })
     }
     private fun initAdapter(data: List<Meme>){

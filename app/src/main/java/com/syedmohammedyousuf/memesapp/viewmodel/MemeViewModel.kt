@@ -11,24 +11,24 @@ import retrofit2.Response
 
 class MemeViewModel : ViewModel() {
 
-    var memeDataList = MutableLiveData<List<Meme>>()
+    var memeDataList = MutableLiveData<MemesResponse>()
 
 
     fun getApiData() {
 
         val retrofitService =
             RetrofitInstance.getRetrofitInstance().create(RetrofitService::class.java)
-        retrofitService.getData().enqueue(object : retrofit2.Callback<List<Meme>> {
+        retrofitService.getData().enqueue(object : retrofit2.Callback<MemesResponse> {
 
             override fun onResponse(
-                call: Call<List<Meme>>,
-                response: Response<List<Meme>>
+                call: Call<MemesResponse>,
+                response: Response<MemesResponse>
             ) {
 
                 memeDataList.value = response.body()
             }
 
-            override fun onFailure(call: Call<List<Meme>>, t: Throwable) {
+            override fun onFailure(call: Call<MemesResponse>, t: Throwable) {
             }
         })
     }

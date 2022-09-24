@@ -8,5 +8,5 @@ import retrofit2.http.GET
 interface RetrofitService {
 
     @GET("/get_memes")
-    fun getData(): Call<List<Meme>>
+    fun getData(): Call<MemesResponse>
 }

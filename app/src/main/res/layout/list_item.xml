@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvList"
@@ -11,6 +12,7 @@
         android:clickable="true"
         android:elevation="3dp"
         android:focusable="true"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,16 +21,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:background="@color/white">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivImg"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:background="@color/black"
+                android:scaleType="fitXY"
                 android:clickable="true"
                 android:focusable="true"
                 android:paddingBottom="10dp"
+                android:backgroundTint="@color/white"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -41,6 +46,7 @@
                 android:paddingBottom="10dp"
                 android:text="Image Title"
                 android:textColor="@color/black"
+                android:background="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"

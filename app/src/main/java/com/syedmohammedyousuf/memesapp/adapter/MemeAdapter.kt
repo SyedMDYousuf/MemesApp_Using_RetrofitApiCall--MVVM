@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textview.MaterialTextView
 import com.syedmohammedyousuf.memesapp.R
@@ -22,8 +23,11 @@ class MemeAdapter(private var mList: List<Meme>): RecyclerView.Adapter<MemeAdapt
     override fun onBindViewHolder(holder: MemeAdapter.ViewHolder, position: Int) {
         val ItemsViewModel = mList[position]
 
-        holder.name.text = ItemsViewModel.name.toString()
-        //holder.name.text = ItemsViewModel.name.toString()
+        holder.name.text = ItemsViewModel.name
+        Glide.with(holder.itemView.context)
+            .load(mList[position].url)
+            .into(holder.itemView.ivImg)
+
 
 
     }
